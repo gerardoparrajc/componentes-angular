@@ -1,12 +1,8 @@
 # Componentes
-## Data binding
+## Anidado de componentes
 
-El data binding en Angular es la forma en que se vincula el modelo de datos de una aplicación con su vista. Cuando se utiliza el data binding en Angular, se establece una conexión entre el código de la aplicación y los elementos de la interfaz de usuario, lo que permite que los cambios en el modelo de datos se reflejen automáticamente en la vista y viceversa. De esta manera, se facilita la manipulación de los datos en la aplicación y se mejora la experiencia del usuario al interactuar con la interfaz de usuario.
+El anidado de compomentes es algo tan básico como construir nuestra aplicación. Ya que todo son componentes, a partir de AppComponent, para añadir nuevos componentes dentro del mismo, se añadirán etiquetas con el selector de los componentes que hayamos creado. Esta forma de incluir en la plantilla de un componente otro componente es el anidado de componentes.
 
-Existen tres formas de implementar el data binding: 
+De este modo, llamaremos componente **padre** al componente que contiene a otro componente, el componente **hijo**.
 
-- El enlazado o binding mediante una propiedad, asignando el valor a la propiedad utilizando la notación `[nombre-propiedad]`
-- El enlazado o binding mediante un evento, asignando una función que maneje el evento indicado utilizando la notación `(nombre-evento)`
-- La interpolación, la cual permite mostrar una propiedad del compomente en la plantilla del mismo, mediante la notación `{{nombre-propiedad}}`
-
-En el archivo **app.component.html** pueden verse estas tres formas.
+En nuestro ejemplo, **AppComponent** contiene anidado a **BotonesComponent** y éste a su vez, contendrá anidadas varias instancias del componente **BotonComponent**.
