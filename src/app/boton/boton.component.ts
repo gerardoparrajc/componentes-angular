@@ -6,5 +6,7 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./boton.component.scss']
 })
 export class BotonComponent {
+
+  // Propiedad definida para que reciba su valor desde el componente padre
   @Input() texto: string = '';
 }

@@ -1,8 +1,7 @@
 # Componentes
-## Anidado de componentes
+## Pasando datos al componente
 
-El anidado de compomentes es algo tan básico como construir nuestra aplicación. Ya que todo son componentes, a partir de AppComponent, para añadir nuevos componentes dentro del mismo, se añadirán etiquetas con el selector de los componentes que hayamos creado. Esta forma de incluir en la plantilla de un componente otro componente es el anidado de componentes.
+Un componente **padre** puede pasar datos a su componente **hijo**. Esto lo hemos visto en el apartado de **Data binding**, con la utilización de `[nombre-propiedad]` en la plantilla.
 
-De este modo, llamaremos componente **padre** al componente que contiene a otro componente, el componente **hijo**.
+En el componente, la propiedad de entrada se declara utilizando el decorador `@Input` en la propiedad que queramos que actue de esa forma. Un ejemplo se puede ver en la implementación del componente **BotonComponent** donde se declara una propiedad de este tipo. Posteriormente, en la plantilla del componente **BotonesComponent** se ha dado valor a esta propiedad. En este caso, al ser una cadena de texto, se utiliza el nombre de la propiedad sin los corchetes. En el caso de que se le pasara una variable, se utilizaría la forma con corchetes.
 
-En nuestro ejemplo, **AppComponent** contiene anidado a **BotonesComponent** y éste a su vez, contendrá anidadas varias instancias del componente **BotonComponent**.
