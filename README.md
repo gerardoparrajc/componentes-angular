@@ -1,3 +1,7 @@
 # Componentes
 
-Los componentes se instancian incluyendo su etiqueta o selector dentro de una plantilla. Por ejemplo, en el archivo **app.component.html** instanciaremos el componente **BotonComponent** incluyendo la etiqueta `<app-boton>`.
+Con el uso de ngModel se puede habilitar la modificación en tiempo de ejecución de variables y que dicha modificación se vea reflejada automáticamente, sin necesidad de añadir funcionalidad.
+
+Para poder utilizar ngModel, hay que importar en **app.modules.ts** el módulo **FormsModule**.
+
+Posteriormente, se utiliza la forma `[(ngModel)]` para realizar la conexión bidireccional con una propiedad del componente.
