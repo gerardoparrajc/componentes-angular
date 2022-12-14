@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class BotonesComponent {
 
+  // Función que maneja el evento (pulsado). Como parámetro recibe los datos enviados por el
+  // componente hijo.
+  mostrarDatosRecibidos(datos: string) {
+    alert(datos);
+  }
 }
