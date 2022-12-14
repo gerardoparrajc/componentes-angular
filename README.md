@@ -1,3 +1,12 @@
 # Componentes
+## Data binding
 
-Los componentes se instancian incluyendo su etiqueta o selector dentro de una plantilla. Por ejemplo, en el archivo **app.component.html** instanciaremos el componente **BotonComponent** incluyendo la etiqueta `<app-boton>`.
+El data binding en Angular es la forma en que se vincula el modelo de datos de una aplicación con su vista. Cuando se utiliza el data binding en Angular, se establece una conexión entre el código de la aplicación y los elementos de la interfaz de usuario, lo que permite que los cambios en el modelo de datos se reflejen automáticamente en la vista y viceversa. De esta manera, se facilita la manipulación de los datos en la aplicación y se mejora la experiencia del usuario al interactuar con la interfaz de usuario.
+
+Existen tres formas de implementar el data binding: 
+
+- El enlazado o binding mediante una propiedad, asignando el valor a la propiedad utilizando la notación `[nombre-propiedad]`
+- El enlazado o binding mediante un evento, asignando una función que maneje el evento indicado utilizando la notación `(nombre-evento)`
+- La interpolación, la cual permite mostrar una propiedad del compomente en la plantilla del mismo, mediante la notación `{{nombre-propiedad}}`
+
+En el archivo **app.component.html** pueden verse estas tres formas.

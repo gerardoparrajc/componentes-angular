@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'componentes';
+  textoBoton: string = '¡Púlsame!';
+  descripcion: string = 'Deberías hacer caso a lo que te pide el siguiente botón:';
+
+  mostrarAlerta() {
+    alert('Botón pulsado');
+  }
 }
