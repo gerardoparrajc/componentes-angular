@@ -2,17 +2,15 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-import { BotonesComponent } from './botones/botones.component';
-import { BotonComponent } from './boton/boton.component';
+import { BotonesModule } from './botones/botones.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    BotonesComponent,
-    BotonComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    BotonesModule
   ],
   providers: [],
   bootstrap: [AppComponent]
