@@ -1,4 +1,7 @@
 <button destacado="yellow" type="button" (click)="pulsarBoton()">
   <span class="etiqueta">{{texto}}</span>
-  <span class="badge">{{ cantidad }}</span>
+  <span *ngIf="cantidad > 5; then mayor else menor" class="badge">{{ cantidad }}</span>
+
+  <ng-template #mayor >Mayor</ng-template>
+  <ng-template #menor>Menor</ng-template>
 </button>
