@@ -24,4 +24,12 @@ button {
     text-align: center;
     border-radius: 100px;
   }
+
+  &.mayor {
+    background-color: green;
+  }
+
+  &.menor {
+    background-color: yellow;
+  }
 }

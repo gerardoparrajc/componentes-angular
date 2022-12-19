@@ -13,8 +13,18 @@ export class BotonComponent {
   // Propiedad definida para que envíe datos al componente padre
   @Output() pulsado: EventEmitter<string> = new EventEmitter();
 
+  esMayor: boolean = false;
+
   pulsarBoton(): void {
     // Se envía el evento con una cadena de texto.
     this.pulsado.emit(`Se ha pulsado el ${this.texto}`);
   }
+
+  getNumber(): number {
+    const resultado = Math.random() * 10;
+    this.esMayor = resultado > 5;
+    return resultado;
+  }
+
+
 }
