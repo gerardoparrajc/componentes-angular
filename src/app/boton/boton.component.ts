@@ -1,11 +1,11 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-boton',
   templateUrl: './boton.component.html',
   styleUrls: ['./boton.component.scss']
 })
-export class BotonComponent {
+export class BotonComponent implements OnInit{
 
   // Propiedad definida para que reciba su valor desde el componente padre
   @Input() texto: string = '';
@@ -14,6 +14,10 @@ export class BotonComponent {
   @Output() pulsado: EventEmitter<string> = new EventEmitter();
 
   esMayor: boolean = false;
+
+  ngOnInit() {
+    this.getNumber();
+  }
 
   pulsarBoton(): void {
     // Se envía el evento con una cadena de texto.

@@ -1,4 +1,4 @@
-<button [ngClass]="getNumber() > 5 ? 'mayor' : 'menor'" type="button" (click)="pulsarBoton()">
+<button [ngClass]="esMayor ? 'mayor' : 'menor'" type="button" (click)="pulsarBoton()">
   <span class="etiqueta">{{texto}}</span>
   <span class="badge">3</span>
 </button>
