@@ -1,7 +1,7 @@
 <div class="botones">
-  <app-boton texto="Botón 1" (pulsado)="mostrarDatosRecibidos($event)"></app-boton>
-  <app-boton texto="Botón 2" (pulsado)="mostrarDatosRecibidos($event)"></app-boton>
-  <app-boton texto="Botón 3" (pulsado)="mostrarDatosRecibidos($event)"></app-boton>
-  <p destacado="yellow">Botón 3</p>
+  <app-boton *ngFor="let boton of botones" [texto]="boton.texto" [cantidad]="boton.cantidad" (pulsado)="mostrarDatosRecibidos($event)"></app-boton>
 </div>
 
+<ul>
+  <li [ngClass]="even ? 'even' : 'odd'"  *ngFor="let boton of botones; index as idx; first as isFirst; last as isLast; count as cuenta; even as even; odd as odd">{{idx}}. {{boton.texto}}. IsFirst? {{ isFirst }}. IsLast? {{isLast}}. Count: {{cuenta}}</li>
+</ul>
