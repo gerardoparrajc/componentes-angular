@@ -1,12 +1,14 @@
-import { Directive, ElementRef } from '@angular/core';
+import { AfterViewInit, Directive, ElementRef } from '@angular/core';
 
 @Directive({
   selector: '[destacado]'
 })
-export class DestacadoDirective {
+export class DestacadoDirective implements AfterViewInit {
 
-  constructor(private el: ElementRef) {
-    this.el.nativeElement.style.backgroundColor = 'yellow';
+  constructor(private el: ElementRef) { }
+
+  ngAfterViewInit(): void {
+    this.el.nativeElement.querySelector('.badge').style.backgroundColor = 'blue';
   }
 
 }
