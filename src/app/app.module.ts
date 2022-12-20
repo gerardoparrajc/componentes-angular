@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { BotonesModule } from './botones/botones.module';
@@ -11,7 +12,8 @@ import { BotonesModule } from './botones/botones.module';
   ],
   imports: [
     BrowserModule,
-    BotonesModule
+    BotonesModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

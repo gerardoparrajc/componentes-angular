@@ -8,6 +8,6 @@ import { MiServicioService } from './services/mi-servicio.service';
 })
 export class AppComponent {
   constructor(private servicio: MiServicioService) {
-    console.log(servicio.getNumero());
+    console.log(servicio.getPosts());
   }
 }
