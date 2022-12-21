@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { firstValueFrom, map } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -22,11 +23,19 @@ export class MiServicioService {
   }
 
   public getPosts() {
-    this.http.get(this.urlServer + 'posts').subscribe({
-      next: (result) => console.log(result),
-      error: (error) => console.log(error),
-      complete: () => console.log('Completado')
-    });
+    return this.http.get(this.urlServer + 'posts').pipe(
+      map((resultado: any) => {
+        const datos = [];
+        for (const post of resultado) {
+          datos.push({
+            titulo: post.title,
+            cuerpo: post.body
+          });
+        }
+
+        return datos;
+      })
+    );
   }
 
   public getPost(id: number) {

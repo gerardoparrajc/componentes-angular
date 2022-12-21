@@ -7,10 +7,18 @@ import { MiServicioService } from './services/mi-servicio.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+
+  posts: any[] = [];
+
   constructor(private servicio: MiServicioService) {
-    console.log(servicio.getPost(548));
+    servicio.getPosts().subscribe({
+      next: (resultado) => {
+        this.posts = resultado;
+      }
+    })
+    /* console.log(servicio.getPost(548));
     console.log(servicio.createPost('hola mundo', 'cuerpo del hola mundo', 4));
     console.log(servicio.updatePost(3, 'hola mundo', 'cuerpo del hola mundo', 4));
-    console.log(servicio.deletePost(83));
+    console.log(servicio.deletePost(83)); */
   }
 }
