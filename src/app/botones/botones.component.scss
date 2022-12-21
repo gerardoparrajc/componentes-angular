@@ -6,6 +6,12 @@
 
 app-boton {
   margin: 0 8px;
+
+  &.activo {
+    button {
+      box-shadow: 0 0 10px #ccc;
+    }
+  }
 }
 
 a {

@@ -1,8 +1,3 @@
 <div class="botones">
-  <!-- <app-boton texto="Botón 1" (pulsado)="mostrarDatosRecibidos($event)"></app-boton>
-  <app-boton destacado texto="Botón 2" (pulsado)="mostrarDatosRecibidos($event)"></app-boton>
-  <app-boton texto="Botón 3" (pulsado)="mostrarDatosRecibidos($event)"></app-boton> -->
-  <a routerLink="/boton/1" routerLinkActive="activo">Boton 1</a>
-  <a routerLink="/boton/2" routerLinkActive="activo">Boton 2</a>
-  <a routerLink="/boton/3" routerLinkActive="activo">Boton 3</a>
+  <app-boton *ngFor="let item of [1, 2, 3]" [routerLink]="['/boton', item]" routerLinkActive="activo" texto="Botón {{item}}"></app-boton>
 </div>
