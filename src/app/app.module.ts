@@ -10,6 +10,8 @@ import { BotonComponent } from './boton/boton.component';
 import { DestacadoDirective } from './directivas/destacado/destacado.directive';
 import { CuerpoComponent } from './cuerpo/cuerpo.component';
 import { EnrutadoModule } from './enrutado.module';
+import { LoginComponent } from './login/login.component';
+import { LogoutComponent } from './logout/logout.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { EnrutadoModule } from './enrutado.module';
     BotonesComponent,
     BotonComponent,
     DestacadoDirective,
-    CuerpoComponent
+    CuerpoComponent,
+    LoginComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,
