@@ -6,7 +6,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 
 
 const rutas:Routes = [
-  { path: 'boton/:num/', component: CuerpoComponent },
+  { path: 'boton/:num', component: CuerpoComponent },
   { path: '', redirectTo: '/boton/1', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent },
 ]
