@@ -8,10 +8,10 @@ import { MiServicioService } from '../services/mi-servicio.service';
 })
 export class BotonesComponent {
 
+  datos;
+
   constructor(private servicio: MiServicioService) {
-    console.log(this.servicio.getNumero());
-    this.servicio.setNumero(3);
-    console.log(this.servicio.getNumero());
+    this.datos = this.servicio.getDatos();
   }
 
   // Función que maneja el evento (pulsado). Como parámetro recibe los datos enviados por el

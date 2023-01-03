@@ -4,19 +4,12 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 // import { BotonesModule } from './botones/botones.module';
-import { RouterModule, Routes } from '@angular/router';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { BotonesComponent } from './botones/botones.component';
 import { BotonComponent } from './boton/boton.component';
 import { DestacadoDirective } from './directivas/destacado/destacado.directive';
 import { CuerpoComponent } from './cuerpo/cuerpo.component';
-
-
-const rutas:Routes = [
-  { path: 'boton/:num', component: CuerpoComponent },
-  { path: '', redirectTo: '/boton/1', pathMatch: 'full' },
-  { path: '**', component: PageNotFoundComponent },
-]
+import { EnrutadoModule } from './enrutado.module';
 
 @NgModule({
   declarations: [
@@ -31,7 +24,7 @@ const rutas:Routes = [
     BrowserModule,
     // BotonesModule,
     HttpClientModule,
-    RouterModule.forRoot(rutas)
+    EnrutadoModule
   ],
   providers: [],
   bootstrap: [AppComponent]

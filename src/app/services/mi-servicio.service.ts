@@ -9,6 +9,32 @@ export class MiServicioService {
 
   public numero: number = 0;
   private urlServer: string = 'https://jsonplaceholder.typicode.com/';
+  private datos = [
+    {
+      id: 1,
+      contenido: 'Contenido del botón 1',
+      titulo: 'Título del botón 1',
+      numero: 5
+    },
+    {
+      id: 2,
+      contenido: 'Contenido del botón 2',
+      titulo: 'Título del botón 2',
+      numero: 3
+    },
+    {
+      id: 3,
+      contenido: 'Contenido del botón 3',
+      titulo: 'Título del botón 3',
+      numero: 8
+    },
+    {
+      id: 4,
+      contenido: 'Contenido del botón 4',
+      titulo: 'Título del botón 4',
+      numero: 1
+    },
+  ];
 
   constructor(private http: HttpClient) {
     this.numero = Math.random() * 10;
@@ -78,5 +104,17 @@ export class MiServicioService {
       error: (error) => console.log(error),
       complete: () => console.log('Completado')
     });
+  }
+
+  public getDatos() {
+    return this.datos;
+  }
+
+  public getDato(id: number) {
+    return this.datos.find(
+      (value) => {
+        return value.id === id;
+      }
+    );
   }
 }

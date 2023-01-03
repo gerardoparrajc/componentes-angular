@@ -1,17 +1,28 @@
-import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Params } from '@angular/router';
+import { MiServicioService } from '../services/mi-servicio.service';
 
 @Component({
   selector: 'app-cuerpo',
   templateUrl: './cuerpo.component.html',
   styleUrls: ['./cuerpo.component.scss']
 })
-export class CuerpoComponent {
+export class CuerpoComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute) {
+  datos: any;
+
+
+  constructor(private route: ActivatedRoute, private servicio: MiServicioService) { }
+
+  ngOnInit(): void {
+    const id = +this.route.snapshot.params['num'];
+    this.datos = this.servicio.getDato(id);
+
     this.route.params.subscribe({
-      next: (ruta) => console.log(ruta),
-      error: (erro) => console.log(erro)
+      next: (params: Params) => {
+        const id = +params['num'];
+        this.datos = this.servicio.getDato(id);
+      }
     });
   }
 }

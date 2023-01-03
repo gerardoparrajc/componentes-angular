@@ -9,6 +9,7 @@ export class BotonComponent implements OnInit{
 
   // Propiedad definida para que reciba su valor desde el componente padre
   @Input() texto: string = '';
+  @Input() numero: number = 0;
 
   // Propiedad definida para que envíe datos al componente padre
   @Output() pulsado: EventEmitter<string> = new EventEmitter();
