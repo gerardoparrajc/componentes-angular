@@ -1,0 +1,31 @@
+form {
+  padding: 16px;
+
+  .campo {
+    margin-bottom: 16px;
+  }
+
+  label {
+    width: 150px;
+    display: inline-block;
+  }
+
+  input, select {
+    border-radius: 4px;
+    padding: 4px;
+
+    &.ng-invalid.ng-touched {
+      border-color: red;
+    }
+
+    &.ng-valid.ng-touched {
+      border-color: greenyellow;
+    }
+  }
+
+  .error {
+    color: red;
+    font-size: 14px;
+    margin-left: 32px;
+  }
+}

@@ -1,0 +1,27 @@
+<form (ngSubmit)="onSubmit()" #formulario="ngForm" >
+  <div id="user-data" ngModelGroup="datosUsuario">
+    <div class="campo">
+      <label for="username">Usuario</label>
+      <input type="text" name="username" id="username" ngModel required #username="ngModel" >
+      <span *ngIf="!username.valid && username.touched" class="error">Este campo es requerido</span>
+    </div>
+    <div class="campo">
+      <label for="email">Email</label>
+      <input type="email" name="email" id="email" ngModel required email #email="ngModel" >
+      <span *ngIf="!email.valid && email.touched" class="error">Este campo es requerido</span>
+      <span *ngIf="!email.valid && email.dirty" class="error">Introduce un email válido</span>
+    </div>
+  </div>
+  <button (click)="rellenarUsuario()">Sugerir usuario</button>
+  <div class="campo">
+    <label for="city">Ciudad</label>
+    <select name="city" id="city" [ngModel]="defaultCity" required #city="ngModel">
+      <option value="almeria">Almería</option>
+      <option value="madrid">Madrid</option>
+      <option value="valencia">Valencia</option>
+    </select>
+    <span *ngIf="!city.valid && city.touched" class="error">Este campo es requerido</span>
+  </div>
+    <button class="btn"  >Enviar</button>
+
+</form>

@@ -13,6 +13,8 @@ import { EnrutadoModule } from './enrutado.module';
 import { LoginComponent } from './login/login.component';
 import { LogoutComponent } from './logout/logout.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormularioComponent } from './formulario/formulario.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -23,14 +25,16 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     DestacadoDirective,
     CuerpoComponent,
     LoginComponent,
-    LogoutComponent
+    LogoutComponent,
+    FormularioComponent
   ],
   imports: [
     BrowserModule,
     // BotonesModule,
     HttpClientModule,
     EnrutadoModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
