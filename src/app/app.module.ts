@@ -12,6 +12,7 @@ import { CuerpoComponent } from './cuerpo/cuerpo.component';
 import { EnrutadoModule } from './enrutado.module';
 import { LoginComponent } from './login/login.component';
 import { LogoutComponent } from './logout/logout.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { LogoutComponent } from './logout/logout.component';
     BrowserModule,
     // BotonesModule,
     HttpClientModule,
-    EnrutadoModule
+    EnrutadoModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
