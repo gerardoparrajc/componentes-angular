@@ -14,7 +14,7 @@ import { LoginComponent } from './login/login.component';
 import { LogoutComponent } from './logout/logout.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormularioComponent } from './formulario/formulario.component';
-import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -34,7 +34,7 @@ import { FormsModule } from '@angular/forms';
     HttpClientModule,
     EnrutadoModule,
     BrowserAnimationsModule,
-    FormsModule
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

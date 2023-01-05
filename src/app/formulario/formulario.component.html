@@ -1,21 +1,24 @@
-<form>
-  <div id="user-data">
+<form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+  <div id="user-data" formGroupName="datosUsuario">
     <div class="campo">
       <label for="username">Usuario</label>
-      <input type="text" name="username" id="username">
+      <input type="text" name="username" id="username" formControlName="username">
+      <span class="error" *ngIf="formulario.get('datosUsuario.username')!.touched && formulario.get('datosUsuario.username')!.hasError('required')">Este campo es obligatorio</span>
+      <span class="error" *ngIf="formulario.get('datosUsuario.username')!.touched && formulario.get('datosUsuario.username')!.hasError('nombreProhibido')">Este nombre ya está en uso</span>
+
     </div>
     <div class="campo">
       <label for="email">Email</label>
-      <input type="email" name="email" id="email" >
+      <input type="email" name="email" id="email" formControlName="email" >
     </div>
   </div>
   <div class="campo">
     <label for="city">Ciudad</label>
-    <select name="city" id="city">
+    <select name="city" id="city" formControlName="city">
       <option value="almeria">Almería</option>
       <option value="madrid">Madrid</option>
       <option value="valencia">Valencia</option>
     </select>
   </div>
-    <button class="btn">Enviar</button>
+  <button class="btn">Enviar</button>
 </form>
