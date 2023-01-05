@@ -9,19 +9,22 @@ import { Observable } from 'rxjs';
 })
 export class FormularioComponent implements OnInit {
 
-  formulario: FormGroup = new FormGroup({
-    datosUsuario: new FormGroup({
-      username: new FormControl('',  [Validators.required, this.nombresProhibidos.bind(this)]),
-      email: new FormControl('', [Validators.required, Validators.email], this.emailsProhibidos),
-    }),
-    city: new FormControl('almeria', Validators.required)
-  });
+  formulario: FormGroup;
 
   constructor() {
-
+    this.formulario = new FormGroup({
+      datosUsuario: new FormGroup({
+        username: new FormControl('',  [Validators.required, this.nombresProhibidos.bind(this)]),
+        email: new FormControl('', [Validators.required, Validators.email], this.emailsProhibidos),
+        edad: new FormControl(0, [Validators.min(18), Validators.max(65), Validators.required])
+      }),
+      city: new FormControl('almeria', Validators.required),
+      aceptacion: new FormControl(false, Validators.requiredTrue)
+    }, this.validadorFormulario);
   }
 
   ngOnInit() {
+
     /* this.formulario.setValue({
       datosUsuario: {
         username: 'test',
@@ -60,6 +63,15 @@ export class FormularioComponent implements OnInit {
     });
 
     return promise;
+  }
+
+  validadorFormulario(form: AbstractControl): { [s: string]: boolean } | null {
+
+    if (form.get('datosUsuario.username')!.value === form.get('datosUsuario.email')!.value) {
+      return { iguales: true };
+    }
+
+    return null;
   }
 
 }

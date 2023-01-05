@@ -16,6 +16,15 @@
         <span class="error" *ngIf="formulario.get('datosUsuario.email')!.hasError('emailProhibido')">El email tiene que tener dominio @gmail.com</span>
       </span>
     </div>
+    <div class="campo">
+      <label for="age">Edad</label>
+      <input type="number" name="age" id="age" formControlName="edad">
+      <span *ngIf="formulario.get('datosUsuario.edad')!.touched">
+        <span class="error" *ngIf="formulario.get('datosUsuario.edad')!.hasError('min')">La edad tiene que ser mayor de 18 años</span>
+        <span class="error" *ngIf="formulario.get('datosUsuario.edad')!.hasError('max')">La edad tiene que ser menor de 65 años</span>
+        <span class="error" *ngIf="formulario.get('datosUsuario.edad')!.hasError('required')">Este campo es obligatorio</span>
+      </span>
+    </div>
   </div>
   <div class="campo">
     <label for="city">Ciudad</label>
@@ -25,5 +34,12 @@
       <option value="valencia">Valencia</option>
     </select>
   </div>
-  <button [disabled]="!formulario.valid" class="btn">Enviar</button>
+
+  <div class="campo">
+    <input type="checkbox" name="aceptacion" id="aceptacion" formControlName="aceptacion">
+    <label for="aceptacion">Acepto los términos legales blah blah blah</label>
+    <span *ngIf="formulario.get('aceptacion')!.hasError('required')" class="error">Debes aceptar los términos legales</span>
+  </div>
+
+  <button  class="btn">Enviar</button>
 </form>
