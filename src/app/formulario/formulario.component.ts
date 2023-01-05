@@ -37,7 +37,6 @@ export class FormularioComponent implements OnInit {
 
   onSubmit() {
     console.log(this.formulario);
-    console.log(this.formulario.get('datosUsuario.username'));
   }
 
   nombresProhibidos(control: FormControl): { [s: string]: boolean } | null {

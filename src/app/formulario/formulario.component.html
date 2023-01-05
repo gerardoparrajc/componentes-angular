@@ -10,6 +10,11 @@
     <div class="campo">
       <label for="email">Email</label>
       <input type="email" name="email" id="email" formControlName="email" >
+      <span *ngIf="formulario.get('datosUsuario.email')!.touched">
+        <span class="error" *ngIf="formulario.get('datosUsuario.email')!.hasError('required')">El campo email es obligatorio</span>
+        <span class="error" *ngIf="formulario.get('datosUsuario.email')!.hasError('email')">El email no es válido</span>
+        <span class="error" *ngIf="formulario.get('datosUsuario.email')!.hasError('emailProhibido')">El email tiene que tener dominio @gmail.com</span>
+      </span>
     </div>
   </div>
   <div class="campo">
@@ -20,5 +25,5 @@
       <option value="valencia">Valencia</option>
     </select>
   </div>
-  <button class="btn">Enviar</button>
+  <button [disabled]="!formulario.valid" class="btn">Enviar</button>
 </form>
