@@ -15,6 +15,7 @@ import { LogoutComponent } from './logout/logout.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormularioComponent } from './formulario/formulario.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { RegistroComponent } from './registro/registro.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     CuerpoComponent,
     LoginComponent,
     LogoutComponent,
-    FormularioComponent
+    FormularioComponent,
+    RegistroComponent
   ],
   imports: [
     BrowserModule,
