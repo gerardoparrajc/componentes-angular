@@ -16,6 +16,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormularioComponent } from './formulario/formulario.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RegistroComponent } from './registro/registro.component';
+import { GradosPipe } from './pipes/grados.pipe';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { RegistroComponent } from './registro/registro.component';
     LoginComponent,
     LogoutComponent,
     FormularioComponent,
-    RegistroComponent
+    RegistroComponent,
+    GradosPipe
   ],
   imports: [
     BrowserModule,

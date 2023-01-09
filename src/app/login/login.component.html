@@ -1,1 +1,24 @@
 <button (click)="login()">Login</button>
+
+<hr>
+
+<p>{{ propiedadAsincrona | async }}</p>
+
+<p>{{ fechaNacimiento | date:'full' }}</p>
+<p>{{ fechaNacimiento | date:'long' }}</p>
+<p>{{ fechaNacimiento | date:'d/L/y' }}</p>
+
+<p>{{ cantidad | number:'2.2-4' }} </p>
+<p>{{ cantidad2 | number:'2.0-0' }} </p>
+
+<p>{{ precio | currency:'EUR':'symbol':'2.0-0' }}</p>
+
+<p>{{ 0.06 | percent }}</p>
+
+<p>{{ 11 | grados }}</p>
+
+<p>{{ 'Texto de Prueba' | lowercase }}</p>
+<p>{{ 'Texto de Prueba' | uppercase }}</p>
+
+<pre>{{ objeto | slice:2 | json }}</pre>
+<pre>{{ 'Texto de Prueba' | slice:2:7 }}</pre>
